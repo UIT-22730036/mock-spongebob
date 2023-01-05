@@ -29,9 +29,9 @@ function App() {
       const newArr2 = newArr.split('')
       return newArr2
         .map((c, i) => {
-          if (c === 'l') {
+          if (c === 'l' || c === 'L') {
             c = 'n'
-          } else if (c === 'n') {
+          } else if (c === 'n' || c === 'N') {
             c = 'l'
           }
           if (i % 2 !== 0) {
