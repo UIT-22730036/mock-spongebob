@@ -22,7 +22,12 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-
+  padding: 1rem;
+  select {
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
   textarea {
     height: 200px;
     width: 50%;
