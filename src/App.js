@@ -12,6 +12,10 @@ const OPTIONS = [
     label: 'Spongebob',
     value: 'spongebob',
   },
+  {
+    label: 'Both',
+    value: 'both',
+  },
 ]
 
 function App() {
@@ -19,7 +23,25 @@ function App() {
   const [mode, setMode] = useState('teencode')
 
   const handleConvert = () => {
-    if (mode === 'spongebob') {
+    if (mode === 'both') {
+      const arr = input.split(' ')
+      const newArr = arr.map(letter => teencodeConvertHandler(letter)).join(' ')
+      const newArr2 = newArr.split('')
+      return newArr2
+        .map((c, i) => {
+          if (c === 'l') {
+            c = 'n'
+          } else if (c === 'n') {
+            c = 'l'
+          }
+          if (i % 2 !== 0) {
+            return c.toUpperCase()
+          } else {
+            return c.toLowerCase()
+          }
+        })
+        .join('')
+    } else if (mode === 'spongebob') {
       const arr = input.split('')
       const newArr = arr.map((c, i) => {
         if (i % 2 !== 0) {
